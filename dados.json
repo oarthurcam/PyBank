@@ -1,0 +1,14 @@
+{
+  "1234567890123456": {
+    "codigo_seguranca": "123",
+    "nome_completo": "João da Silva",
+    "data_nascimento": "1990-05-21",
+    "saldo": 500.34
+  },
+  "9876543210987654": {
+    "codigo_seguranca": "987",
+    "nome_completo": "Maria Oliveira",
+    "data_nascimento": "1985-09-10",
+    "salfo": 1096.87
+  }
+}
