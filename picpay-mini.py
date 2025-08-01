@@ -20,13 +20,12 @@ def verificar(numero_frente, codigo):
         # Verifica se o número do cartão existe
         if numero_frente in dados:
             if dados[numero_frente]["codigo_seguranca"] == codigo:
-                print(f"Acesso autorizado para {dados[numero_frente]['nome_completo']}")
+                print(f"Acesso autorizado para {dados[numero_frente]['nome_completo']} seu saldo atual é de R$ {dados[numero_frente]['saldo']}")
                 return True
         else:
             print("Número do cartão ou código não encontrado.")
     
     return False
-
 
 
 # Sistema de entrar em conta
@@ -38,15 +37,13 @@ while True:
         
         # Usuário entro no sitema
         if entrar == True:
-            print('Acesso permitido!')
             
             # Ação do usuário
             while True:
                 escolha = int(input('(1) transferir\n(2) Investir\n(3) Sair \n Digite um numero para selecionar a opção: '))
                 
                 if escolha == 1:
-                    print()
-
+ 
                 elif escolha == 2:
                     investir = input('Qual de nossas opções\n')
 
@@ -72,9 +69,8 @@ while True:
     # Criar conta
     elif sn == 'n':
         print('processo de criar conta') 
-        
+        break
     
     else:
         print('Não entendi oque quis dizer')
-        print('Tente novamente...')
-
+        break # inves de usar break usar algo para retornar , exceto se for maior que 3 tentativas
