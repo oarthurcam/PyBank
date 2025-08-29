@@ -33,3 +33,19 @@ def transferir(numero_frente, dados):
         contatos = dados[numero_frente]["contatos"]
 
         print("=== Lista de contatos ===")
+
+        for i, contato in enumerate(contatos, start=1):
+            print(f"({i}) {contato['nome']} - Cartão: {contato['cartao']} - Banco: {contato['banco']}")
+
+        try:
+            escolha = int(input("Digite o número do contato: ")) - 1
+            if 0 <= escolha < len(contatos):
+                escolhido = contatos[escolha]
+                print(f"Você escolheu transferir para {escolhido['nome']} ({escolhido['banco']})")                
+
+            else:
+                print("Opção inválida.")
+        except ValueError:
+            print("Entrada inválida. Digite apenas números.")
+    else:
+        print("Conta não encontrada.")
