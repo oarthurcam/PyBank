@@ -21,12 +21,20 @@ while True:
                 escolha = int(input('(1) transferir\n(2) Investir\n(3) Sair \n Digite um numero para selecionar a opção: '))
                 
                 if escolha == 1:
-                    func.transferir(numero, dados) 
-                    
+                    func.transferir(numero, dados)          
 
- 
-                #elif escolha == 2:
-                    investir = input('Qual de nossas opções\n')
+                elif escolha == 2:
+                    investir = float(input('Em qual empresa deseja investir? (1) Google (2) Amazon (3) Tesla: '))
+                    valor = float(input(f'Ótimo! Qual o valor que deseja investir na empresa {investir}?\n O seu saldo atual é de {dados[numero]["saldo"]}'))
+
+                    if valor > dados[numero]['saldo']:
+                        print('Valor maior que o saldo')
+
+                    else:
+                        dados[numero]['saldo'] -= valor
+                        print(f'Investimento de R$ {valor} na empresa {investir} realizado com sucesso!')
+                        print(f'Seu novo saldo é de R$ {dados[numero]["saldo"]}')
+                        # poderia realmente fazer o investimento para empresa em um json, mais vamos deixar no ficticio
 
                 elif escolha == 3:
                     break
